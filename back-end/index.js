@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 const port = 3001;
@@ -11,6 +12,12 @@ const connection = mysql.createConnection({
   password: "@Belgique59114",
   database: "dbExcuses",
 });
+
+var corsOption = {
+  origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOption));
 
 // Établissement de la connexion à la base de données
 connection.connect((err) => {
@@ -34,6 +41,21 @@ app.get("/api/excuses", (req, res) => {
   });
 });
 
+app.get(`/api/excuse/:http_code`, (req, res) => {
+  const http_code = parseInt(req.params.http_code);
+  connection.query(
+    `SELECT * FROM excuse WHERE http_code = ${http_code}`,
+    (error, results) => {
+      if (error) {
+        console.error("Erreur lors de l'exécution de la requête :", error);
+        res.status(500).send("Erreur lors de l'exécution de la requête");
+        return;
+      }
+      res.json({ excuse: results });
+    }
+  );
+});
+
 app.post("/api/excuses/new", (req, res) => {
   console.log(req.body);
   const { http_code, tag, message } = req.body;
@@ -55,7 +77,6 @@ app.post("/api/excuses/new", (req, res) => {
     }
 
     res.json({
-      message: "Excuse créée avec succès",
       excuse: { http_code, tag, message },
     });
   });
