@@ -5,6 +5,6 @@ import axios from "axios";
  * - Récupération de l'URL de l'API
  */
 const apiBackEnd = axios.create({
-  baseURL: "http://localhost:3001",
+  baseURL: process.env.REACT_APP_API_BASE_URL || "http://localhost:3001",
 });
 export default apiBackEnd;
