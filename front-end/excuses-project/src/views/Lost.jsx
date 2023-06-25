@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NotFound() {
+  // useNavigate permet la redirection
   const navigate = useNavigate();
 
-  // Utilisation du useEffect afin de faire la redirection automatique
+  // Utilisation de setTimeout afin de rediriger l'utilisateur après 5s sur cette page
   useEffect(() => {
     const timeout = setTimeout(() => {
       navigate("/");

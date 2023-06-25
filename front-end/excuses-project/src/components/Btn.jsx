@@ -1,10 +1,12 @@
 import React from "react";
 
-const Btn = ({ text, fnCallback }) => {
+const Btn = ({ text, fnOnClick }) => {
   return (
-    <button className="btn-click" onClick={fnCallback}>
-      {text}
-    </button>
+    <div className="btnGenRandom">
+      <button className="btn-click" onClick={fnOnClick}>
+        {text}
+      </button>
+    </div>
   );
 };
 

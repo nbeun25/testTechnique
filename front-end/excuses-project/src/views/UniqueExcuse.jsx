@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import apiBackEnd from "../api/api.Backend";
 
 export default function UniqueExcuse() {
+  // useParams permet la récupération d'information avec l'url associé
   const { http_code } = useParams();
   const [excuse, setExcuse] = useState({});
 
+  // Appel à l'API ce qui permet de trouver une seule excuse
   useEffect(() => {
     if (http_code) {
       apiBackEnd
@@ -19,6 +21,7 @@ export default function UniqueExcuse() {
     }
   }, [http_code]);
 
+  // J'interviens avec une condition, si je n'ai pas trouvé d'excuse alors j'affiche un message indiquant à la partie client que je n'ai pas trouvé de numéro d'excuse associé à une excuse, sinon j'affiche toutes les informations de l'excuse
   if (!excuse) {
     return (
       <div className="container">
