@@ -7,6 +7,7 @@ export default function Home() {
   const [excuses, setExcuses] = useState([]);
   const [excuse, setExcuse] = useState();
 
+  // On va chercher les informations dans le serveur NodeJS
   useEffect(() => {
     apiBackEnd
       .get(`api/excuses`)
@@ -20,6 +21,7 @@ export default function Home() {
       });
   }, []);
 
+  // Permet de générer un Random
   function getRandom(excuses, nbRandom) {
     let newRandom;
     do {
@@ -28,6 +30,7 @@ export default function Home() {
     return newRandom;
   }
 
+  // Permet de générer un random à l'écoute du click
   function randomOnClick() {
     return setExcuse(excuses[getRandom(excuses, excuse.id - 1)]);
   }

@@ -8,6 +8,7 @@ import React from "react";
 import UniqueExcuse from "./views/UniqueExcuse";
 
 function Root() {
+  // Définition de toutes les routes
   return (
     <div className="App">
       <Router>

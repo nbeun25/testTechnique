@@ -1,3 +1,4 @@
+// Import : 
 const mysql = require("mysql2");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -7,6 +8,7 @@ require("dotenv").config();
 const app = express();
 const port = 8080;
 
+// Permet la possibilité d'une connexion avec mySql
 const connection = mysql.createConnection({
   host: process.env.HOST,
   user: process.env.DB_USER,
@@ -14,6 +16,7 @@ const connection = mysql.createConnection({
   database: process.env.DB_DATABASE,
 });
 
+// Permet une sécurité - seul cet URL est autorisé à travailler avec ce server
 var corsOption = {
   origin: "http://localhost:3000",
 };
@@ -31,6 +34,7 @@ connection.connect((err) => {
 
 app.use(bodyParser.json());
 
+// Route qui permet d'afficher toutes les excuses
 app.get("/api/excuses", (req, res) => {
   connection.query("SELECT * FROM excuse", (error, results) => {
     if (error) {
@@ -42,6 +46,7 @@ app.get("/api/excuses", (req, res) => {
   });
 });
 
+// Route qui permet d'afficher une seule excuse
 app.get(`/api/excuse/:http_code`, (req, res) => {
   const http_code = parseInt(req.params.http_code);
   connection.query(
@@ -57,7 +62,8 @@ app.get(`/api/excuse/:http_code`, (req, res) => {
   );
 });
 
-app.post("/api/excuses/new", (req, res) => {
+// Route qui permet d'ajouter une excuse
+app.post("/api/excuse/new", (req, res) => {
   console.log(req.body);
   const { http_code, tag, message } = req.body;
 
@@ -83,6 +89,7 @@ app.post("/api/excuses/new", (req, res) => {
   });
 });
 
+// Ecoute du port
 app.listen(port, () => {
   console.log(`Serveur démarré sur le port ${port}`);
 });

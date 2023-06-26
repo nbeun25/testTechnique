@@ -7,7 +7,7 @@ export default function UniqueExcuse() {
   const { http_code } = useParams();
   const [excuse, setExcuse] = useState({});
 
-  // Appel à l'API ce qui permet de trouver une seule excuse
+  // Appel à l'API ce qui permet de retourner une seule excuse
   useEffect(() => {
     if (http_code) {
       apiBackEnd
