@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
   host: process.env.HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
+  database: process.env.DB_DATABASE
 });
 
 // Permet une sécurité - seul cet URL est autorisé à travailler avec ce server

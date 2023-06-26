@@ -19,6 +19,16 @@ Ainsi, lorsque vous utilisez la commande `ls`, vous devez découvrir que vous av
 
 Celui-ci va ainsi mettre en place une dockerisation du projet côté Back, n'ayant pas réussi à mettre en place la dockerisation côté Front, ce dernier n'est pas sur docker.
 
+ATTENTION - J'ai décelé un bug, le container mysql s'arrête et ne se charge pas entièrement, ainsi, le server NodeJS ne va pas pouvoir se connecter à MySQL. 
+
+La seule solution que j'ai pu trouvé est la suivante : 
+
+### `docker compose down`
+
+Pour ensuite relancer la machine virtuelle 
+
+### `docker compose up`
+
 4 - Vérifier dans Docker que l'application avec les containers associés sont mis en route, si c'est le cas, le côté back est dockerisé ! Ainsi, le serveur NodeJS est mis en place. 
 
 5 - Reprenez votre terminal et dupliquez le afin d'en avoir un nouveau. A la suite de cela, vous pouvez réeffectuer la commande `ls`, vous devez une nouvelle fois, retrouver les dossiers front-end ainsi que back-end. 

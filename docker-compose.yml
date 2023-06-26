@@ -6,35 +6,37 @@ services:
     volumes:
       - appDatabase:/var/lib/mysql
       - ./back-end/db/:/docker-entrypoint-initdb.d
+    expose: 
+      - 3306
     ports:
       - 3306:3306
     environment: 
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: mysqlDatabase
     networks: 
-      - back_end
+      - back
     
   serverBack:
     image: node:18-alpine
-    command: sh -c "npm install && npm start"
-    depends_on: 
-      - appDatabaseSql
     ports: 
       - 8080:8080
-    working_dir: /back-end
-    volumes: 
-      - ./back-end:/back-end
+    depends_on: 
+      - appDatabaseSql
     environment: 
       MYSQL_HOST: mysql
       MYSQL_USER: root
       MYSQL_PASSWORD: password
       MYSQL_DB: mysqlDatabase 
+    working_dir: /back-end
+    volumes: 
+      - ./back-end:/back-end
+    command: sh -c "npm install && npm start"
     networks:
-      - back_end 
+      - back 
 
 volumes: 
   appDatabase: 
 
 networks: 
-  back_end: 
+  back: 
     driver: bridge
