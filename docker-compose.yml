@@ -6,13 +6,13 @@ services:
     volumes:
       - appDatabase:/var/lib/mysql
       - ./back-end/db/:/docker-entrypoint-initdb.d
-    expose: 
-      - 3306
+    ports:
+      - 3306:3306
     environment: 
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: mysqlDatabase
     networks: 
-      - back-end
+      - back_end
     
   serverBack:
     image: node:18-alpine
@@ -20,7 +20,7 @@ services:
     depends_on: 
       - appDatabaseSql
     ports: 
-      - 3001:3001
+      - 8080:8080
     working_dir: /back-end
     volumes: 
       - ./back-end:/back-end
@@ -30,11 +30,11 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_DB: mysqlDatabase 
     networks:
-      - back-end 
+      - back_end 
 
 volumes: 
   appDatabase: 
 
 networks: 
-  back-end: 
+  back_end: 
     driver: bridge

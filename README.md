@@ -10,20 +10,20 @@ Vous pouvez ainsi en ligne de commande dans un terminal utiliser la commande ci-
 - A l'aide d'une clé SSH :
 ### `git clone git@github.com:nbeun25/testTechnique.git`
 
-2 - Lorsque l'application a été cloné, vous devez rester sur le terminal et regarder si vous êtes bien dans le dossier source : testtechnique. 
+2 - Lorsque l'application a été clonée, vous devez rester sur le terminal et regarder si vous êtes bien dans le dossier source : testtechnique. 
 Ainsi, lorsque vous utilisez la commande `ls`, vous devez découvrir que vous avez les dossiers back-end ainsi que front-end. 
 
-3 - Veérifiez que vous ayez docker d'installer, à la suite de cela, vous pouvez utiliser la commande suivante : 
+3 - Vérifiez que vous ayez docker d'installé et lancé, à la suite de cela, vous pouvez utiliser la commande suivante sur votre VSCode ou l'IDE de votre choix : 
 
 ### `docker compose up`
 
-Celui-ci va ainsi mettre en place une dockerisation du projet du côté Back, n'ayant pas réussi à mettre en place la dockerisation côté Front. 
+Celui-ci va ainsi mettre en place une dockerisation du projet côté Back, n'ayant pas réussi à mettre en place la dockerisation côté Front, ce dernier n'est pas sur docker.
 
 4 - Vérifier dans Docker que l'application avec les containers associés sont mis en route, si c'est le cas, le côté back est dockerisé ! Ainsi, le serveur NodeJS est mis en place. 
 
-5 - Reprenez votre terminal et dupliquer le afin d'en avoir un nouveau. A la suite de cela, vous pouvez rééffectuer la commande `ls`, vous devez une nouvelle voir retrouver les dossier front-end ainsi que back-end. 
+5 - Reprenez votre terminal et dupliquez le afin d'en avoir un nouveau. A la suite de cela, vous pouvez réeffectuer la commande `ls`, vous devez une nouvelle fois, retrouver les dossiers front-end ainsi que back-end. 
 
-Vous pouvez effectuer les commande suivante afin de rentrer dans le projet front, pour lancer React : 
+Vous pouvez effectuer les commandes suivantes afin de rentrer dans le projet front, pour lancer React : 
 
 ### `cd front-end`
 
@@ -39,6 +39,6 @@ Les dépendances installés, vous pouvez de nouveau lancer une commande npm afin
 
 ### `npm start`
 
-Lorsque cela est effectué, vous pouvez utiliser l'application comme vous utilisez, les autres sites. Ce qui diffère c'est que vous utilisez votre localhost afin de visiter votre site. 
+Lorsque cela est effectué, vous pouvez utiliser l'application comme vous utilisez, les autres sites. Ce qui diffère c'est que vous utilisez localhost afin de visiter votre site. 
 
-Voilà vous venez d'installer un serveur NodeJS, qui est utilisé par mysql. Vous avez normalement des datas dans la base de donnée. Ainsi, l'application devrait fonctionner. 
+Voilà, vous venez d'installer un serveur NodeJS, qui est utilisé par mysql. Vous avez normalement des datas dans la base de donnée. Ainsi, l'application devrait fonctionner. 

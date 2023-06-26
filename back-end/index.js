@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.NODE_DOCKER_PORT || 3306;
+const port = 8080;
 
 const connection = mysql.createConnection({
   host: process.env.HOST,
@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
 });
 
 var corsOption = {
-  origin: process.env.CLIENT_ORIGIN || "http://localhost:3000",
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOption));
