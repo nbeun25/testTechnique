@@ -25,6 +25,6 @@ Lorsque cela est effectué, vous pouvez utiliser l'application, comme vous utili
 
 Vous pouvez ainsi aller sur l'application via l'URL : 
 
-# [http://localhost:3000/]
+- [http://localhost:3000/]
 
 Voilà, vous venez d'installer un container NodeJS, qui est utilisé avec une base de donnée mysql, et un container ReactJS. Vous avez normalement des datas dans la base de donnée. Ainsi, l'application va fonctionner. 
