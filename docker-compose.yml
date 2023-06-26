@@ -15,13 +15,18 @@ services:
       MYSQL_DATABASE: mysqlDatabase
     networks: 
       - back
+    healthcheck: 
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5
     
   serverBack:
     image: node:18-alpine
     ports: 
       - 8080:8080
     depends_on: 
-      - appDatabaseSql
+      appDatabaseSql:
+        condition: service_healthy
     environment: 
       MYSQL_HOST: mysql
       MYSQL_USER: root
