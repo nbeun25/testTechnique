@@ -37,7 +37,18 @@ services:
       - ./back-end:/back-end
     command: sh -c "npm install && npm start"
     networks:
-      - back 
+      - back
+
+  frontApp:
+    image: node:18-alpine
+    ports: 
+      - 3000:3000 
+    working_dir: /front-end
+    volumes: 
+      - ./front-end/excuses-project:/front-end
+    command: sh -c "npm install && npm start"
+    networks:
+      - back
 
 volumes: 
   appDatabase: 

@@ -17,28 +17,10 @@ Ainsi, lorsque vous utilisez la commande `ls`, vous devez découvrir que vous av
 
 ### `docker compose up`
 
-Celui-ci va ainsi mettre en place une dockerisation du projet côté Back, n'ayant pas réussi à mettre en place la dockerisation côté Front, ce dernier n'est pas sur docker.
+Celui-ci va ainsi mettre en place une dockerisation du projet côté Back et Front. ATTENTION - La dockerisation du côté front prend du temps.  
 
-4 - Vérifier dans Docker que l'application avec les containers associés sont mis en route, si c'est le cas, le côté back est dockerisé ! Ainsi, le serveur NodeJS est mis en place. 
+4 - Vérifier dans Docker que l'application avec les containers associés sont mis en route. Ainsi, le serveur NodeJS et React sont mis en place. 
 
-5 - Reprenez votre terminal et dupliquez le afin d'en avoir un nouveau. A la suite de cela, vous pouvez réeffectuer la commande `ls`, vous devez une nouvelle fois, retrouver les dossiers front-end ainsi que back-end. 
+Lorsque cela est effectué, vous pouvez utiliser l'application, comme vous utilisez les autres sites. Ce qui diffère c'est que vous utilisez localhost afin de visiter votre site. 
 
-Vous pouvez effectuer les commandes suivantes afin de rentrer dans le projet front, pour lancer React : 
-
-### `cd front-end`
-
-Lorsque vous êtes entré dans le dossier front-end, vous pouvez réutiliser la commande suivante : 
-
-### `cd excuses-projet`
-
-6 - Lorsque vous êtes dans le bon dossier, vous pouvez utiliser la commande suivante, afin d'installer les dépendances de React : 
-
-### `npm i`
-
-Les dépendances installés, vous pouvez de nouveau lancer une commande npm afin de lancer le projet en React. 
-
-### `npm start`
-
-Lorsque cela est effectué, vous pouvez utiliser l'application comme vous utilisez, les autres sites. Ce qui diffère c'est que vous utilisez localhost afin de visiter votre site. 
-
-Voilà, vous venez d'installer un serveur NodeJS, qui est utilisé par mysql. Vous avez normalement des datas dans la base de donnée. Ainsi, l'application devrait fonctionner. 
+Voilà, vous venez d'installer un container NodeJS, qui est utilisé avec une base de donnée mysql, et un container ReactJS. Vous avez normalement des datas dans la base de donnée. Ainsi, l'application va fonctionner. 
