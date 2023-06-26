@@ -23,4 +23,8 @@ Celui-ci va ainsi mettre en place une dockerisation du projet côté Back et Fro
 
 Lorsque cela est effectué, vous pouvez utiliser l'application, comme vous utilisez les autres sites. Ce qui diffère c'est que vous utilisez localhost afin de visiter votre site. 
 
+Vous pouvez ainsi aller sur l'application via l'URL : 
+
+# [http://localhost:3000/]
+
 Voilà, vous venez d'installer un container NodeJS, qui est utilisé avec une base de donnée mysql, et un container ReactJS. Vous avez normalement des datas dans la base de donnée. Ainsi, l'application va fonctionner. 
